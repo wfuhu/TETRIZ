@@ -3,8 +3,14 @@
 #include"color.h"
 namespace gm
 {
-    using Tetromino=std::vector<std::vector<int>>;
-    extern Tetromino I,J,L,O,S,T,Z;
+
     extern std::map<int,Color> tetro_color;
     Tetromino rotate(Tetromino &t);
+
+    
+  
+
+   bool get_bit(int t,int i,int j);
+    extern Tetromino I,J,L,O,S,T,Z;
+
 }

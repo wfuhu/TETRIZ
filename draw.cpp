@@ -68,29 +68,39 @@ void window(int top, int left, int width, int height, std::string title)
     tc::move_to(top,ut::b2c(left)+(width*2-title.length())/2);
         std::cout<<title;
     
-}
+};
 
-void tetromino(gm::Tetromino& t, int top, int left)
-{
-    tc::move_to(top,ut::b2c(left));
-    for (size_t i = 0; i < t.size(); i++)
+
+
+void frame(Matrix &frame, int top, int left){
+    int row,col;
+    for (size_t x = 0; x < 10; ++x)
     {
-        tc::move_to(top+i,ut::b2c(left));
-        for (size_t j = 0; j < t[0].size(); j++)
+        for (size_t y = 0; y < 20; ++y)
         {
-            if(t[i][j]>0)
-            {
-                tc::set_back_color((int)gm::tetro_color[t[i][j]]);
-                std::cout<<"  ";
-            }
-            else
+            row=top+20-y-1;
+            col=left+x;
+            tc::move_to(row,ut::b2c(col));
+            if(frame[x][y]>0)
             {
                 tc::reser_color();
+                tc::set_back_color(frame[x][y]);
                 std::cout<<"  ";
+            }else if(frame[x][y]<0)
+            {
+                tc::reser_color();
+                tc::set_fore_color(0-frame[x][y]);
+                std::cout<<"\u25e3\u25e5";
+                
+            }else
+            {
+                tc::reser_color();
+                std::cout<<"\u30FB";
             }
         }
         
     }
     
+
 }
 }

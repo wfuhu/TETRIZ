@@ -7,7 +7,7 @@ extern bool running;
 
 extern Piece c_piece;
 
-using Matrix=std::vector<std::vector<int>>;
+
 extern Matrix playfield;
 extern std::chrono::microseconds duration;
 
@@ -19,6 +19,8 @@ void init();
 
 Piece pick();
 
+void render();
+
 void process();
 void rotate();
 void left();
@@ -27,4 +29,6 @@ void down();
 
 // extern int row,col;
 // extern Tetromino cur;
+// extern int cur_index;
+
 }

@@ -1,23 +1,12 @@
-#include "piece.h"
+#pragma once
+#include<string>
+#include"define.h"
+namespace ut{
+    int fps();
+    inline int b2c(int b)
+    {
+        return 2*b-1;
+    }
 
-namespace gm{
-
-Peice::Piece(Tetromino &t, int x0, int y0):tetro_set(t),x(x0),y(y0)
-{
-}
-
-Piece::down()
-{
-   if(test(x,y-1))
-   {
-    y--;
-   }
-}
-
-bool Piece::test(int x, int y)
-{
-
-
-    return false;
-}
+    bool timer(std::chrono::microseconds sec);
 }

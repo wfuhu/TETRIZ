@@ -29,7 +29,7 @@ bool ut::timer(std::chrono::microseconds sec)
     if(end-start>sec)
     {
         start=end;
-        return true
+        return true;
     }
 
     return false;

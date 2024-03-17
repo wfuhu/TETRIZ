@@ -20,7 +20,7 @@ void loop()
     int i=1;
     while (gm::running)
     {
-       
+        gm::process();
         tc::clean_screen();
         dw::window(1,1,9,6,"Hold");
         dw::window(1,10,12,22,"Tetriz");
@@ -30,7 +30,7 @@ void loop()
         
         tc::move_to(10,4);
         std::cout<<"FPS:"<<ut::fps();
-
+        dw::frame(gm::frame,2,11);
         // tc::move_to(gm::row,ut::b2c(gm::col));
         // dw::tetromino(gm::cur,gm::row,gm::col);
         tc::reser_color();
